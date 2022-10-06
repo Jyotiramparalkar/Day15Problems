@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
-public class Node {
+public class Node 
+{
     int data;
     Node left;
     Node right;

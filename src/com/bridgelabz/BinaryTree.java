@@ -4,8 +4,7 @@ public class BinaryTree
 {
 	  //Represent the root of binary tree
     public Node root;
-    public BinaryTree()
-    {
+    public BinaryTree(){
         root = null;
     }
 
@@ -39,6 +38,18 @@ public class BinaryTree
         }
         return 1 + size(root.left) + size(root.right);
     }
+
+    public void search(Node currentNode, int data){
+        if ( currentNode == null)
+            System.out.println(data + " not found in BST!");
+        else if (currentNode.data == data){
+            System.out.println(data+ " Found in BST!");
+        } else if (data <= currentNode.data) {
+             search(currentNode.left,data);
+        }else{
+            search(currentNode.right, data);
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Binary search tree problem");
 
@@ -61,5 +72,7 @@ public class BinaryTree
         binaryTree.inOrderTraversal(binaryTree.root);
 
         System.out.println("\nSize : "+ binaryTree.size(binaryTree.root));
+
+        binaryTree.search(binaryTree.root, 63);
     }
 }
